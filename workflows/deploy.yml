@@ -44,4 +44,6 @@ jobs:
 
     - name: Update Deployment on GKE
       run: |
+        echo "Updating image to $IMAGE:${{ github.sha }}"
         kubectl set image deployment/user-app user=${{ env.IMAGE }}:${{ github.sha }}
+
